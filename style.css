@@ -110,6 +110,34 @@ nav a {
 }
 
 
+.tooltip {
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.8);
+    color: #fff;
+    padding: 10px;
+    border-radius: 5px;
+    visibility: hidden;
+    transition: visibility 0s, opacity 0.2s ease;
+    opacity: 0;
+    z-index: 100;
+    white-space: nowrap;
+}
+
+.tooltip::after {
+    content: '';
+    position: absolute;
+    bottom: 100%; /* Position above the tooltip */
+    left: 50%;
+    margin-left: -5px; /* Center the arrow */
+    border-width: 5px;
+    border-style: solid;
+    border-color: transparent transparent rgba(0, 0, 0, 0.8) transparent; /* Arrow color */
+}
+
+.telangana-map-container {
+    position: relative;
+}
+
 .district-products {
     padding: 40px;
     background-color: #f8f8f8;

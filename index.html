@@ -41,27 +41,19 @@
         <p>The One District One Product initiative in Telangana aims to promote local crafts, food, and specialties that are unique to each district. By focusing on a single product from every district, ODOP fosters rural economic growth and cultural preservation.</p>
     </section>
 
-
-
     <section class="map" id="district-map">
         <h2>Select a District</h2>
         <div class="telangana-map-container">
             <img src="https://upload.wikimedia.org/wikipedia/commons/f/f4/TG-districts-te.svg" alt="Telangana District Map" height="630" width="667" usemap="#image-map">
-            
-            
-
             <map name="image-map">
-                <area target="" alt="" title="" href="districts/yadadri.html" coords="345,379,310,395,309,376,302,354,304,337,317,328,332,335,341,347,351,356,364,361,370,364,325,387,348,374,342,376" shape="poly"></area>
-                <area target="" alt="" title="" href="districts/hyderabad.html" coords="242,365,259,350,271,361,260,377" shape="poly"></area>
-                <area target="" alt="" title="" href="districts/khammam.html" coords="428,378,440,369,450,374,463,366,470,350,484,348,485,369,495,373,510,375,529,375,535,384,533,396,518,398,494,394,484,402,477,411,496,416,504,426,485,425,464,409,453,405,435,394" shape="poly"></area>
-                <area target="" alt="" title="" href="districts/nizamabad.html" coords="177,209,190,195,201,194,217,185,233,182,244,183,256,184,262,203,265,215,257,229,243,235,222,233,210,228,200,233,183,230,173,214" shape="poly"></area>
+                <area target="" alt="Yadadri" title="Yadadri: Pochampally Ikat" href="districts/yadadri.html" coords="345,379,310,395,309,376,302,354,304,337,317,328,332,335,341,347,351,356,364,361,370,364,325,387,348,374,342,376" shape="poly">
+                <area target="" alt="Hyderabad" title="Hyderabad: Pearl Jewelry" href="districts/hyderabad.html" coords="242,365,259,350,271,361,260,377" shape="poly">
+                <area target="" alt="Khammam" title="Khammam: Bamboo Products" href="districts/khammam.html" coords="428,378,440,369,450,374,463,366,470,350,484,348,485,369,495,373,510,375,529,375,535,384,533,396,518,398,494,394,484,402,477,411,496,416,504,426,485,425,464,409,453,405,435,394" shape="poly">
+                <area target="" alt="Nizamabad" title="Nizamabad: Nizamabad Black Pottery" href="districts/nizamabad.html" coords="177,209,190,195,201,194,217,185,233,182,244,183,256,184,262,203,265,215,257,229,243,235,222,233,210,228,200,233,183,230,173,214" shape="poly">
             </map>
+            <div class="tooltip" id="tooltip"></div>
         </div>
     </section>
-
-    
-    
-    
 
     <section class="district-products">
         <h2>District Products</h2>
@@ -93,10 +85,32 @@
     <script>
         const hamburger = document.querySelector('.hamburger-menu');
         const navMenu = document.querySelector('nav');
-
+        const tooltip = document.getElementById('tooltip');
+    
         hamburger.addEventListener('click', () => {
             navMenu.classList.toggle('active');
         });
+    
+        document.querySelectorAll('area').forEach(area => {
+            area.addEventListener('mouseover', function(event) {
+                tooltip.textContent = this.title;
+                tooltip.style.visibility = 'visible';
+                tooltip.style.opacity = '1';
+                tooltip.style.top = event.pageY - tooltip.offsetHeight - 10 + 'px'; // Position above
+                tooltip.style.left = event.pageX - tooltip.offsetWidth / 2 + 'px'; // Center it
+            });
+    
+            area.addEventListener('mousemove', function(event) {
+                tooltip.style.top = event.pageY - tooltip.offsetHeight - 10 + 'px'; // Adjust to follow mouse
+                tooltip.style.left = event.pageX - tooltip.offsetWidth / 2 + 'px'; // Center it
+            });
+    
+            area.addEventListener('mouseout', function() {
+                tooltip.style.visibility = 'hidden';
+                tooltip.style.opacity = '0';
+            });
+        });
     </script>
+    
 </body>
 </html>
