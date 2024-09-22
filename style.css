@@ -40,8 +40,8 @@ nav a {
 }
 
 nav a:hover {
-    color: #ffffff; /* Keep the text white */
-    background-color: rgba(228, 78, 34, 0.8); /* Opaque orange background */
+    color: #000000; /* Keep the text white */
+    background-color: #f8f8f8; /* Opaque orange background */
     transform: scale(1.1); /* Slightly enlarge */
 }
 
@@ -100,7 +100,8 @@ nav a:hover {
 }
 
 .button:hover {
-    background-color: #e44e22;
+    color: #000000;
+    background-color: #f8f8f8;
     transform: scale(1.1); /* Slightly enlarge button */
     z-index: 1; /* Ensures it appears on top if other elements overlap */
 }
@@ -377,10 +378,65 @@ nav a:hover {
 
 
 footer {
-    background-color: #f0f0f0;
-    padding: 20px;
-    text-align: center;
+    background-color: #333; /* Dark background */
+    color: white; /* White text */
+    padding: 20px; /* Padding around the footer */
+    text-align: center; /* Center text */
 }
+
+.footer-content {
+    display: flex; /* Flexbox for layout */
+    justify-content: space-between; /* Space between sections */
+    max-width: 1200px; /* Max width for content */
+    margin: 0 auto; /* Center the footer content */
+}
+
+.footer-section {
+    flex: 1; /* Each section takes equal space */
+    padding: 0 20px; /* Padding inside each section */
+}
+
+.footer-section h3 {
+    margin-bottom: 10px; /* Space below headings */
+}
+
+.footer-section ul {
+    list-style-type: none; /* Remove bullet points */
+    padding: 0; /* Remove padding */
+}
+
+.footer-section ul li {
+    margin: 5px 0; /* Space between list items */
+}
+
+.footer-section a {
+    color: #e44e22; /* Orange color for links */
+    text-decoration: none; /* Remove underline */
+}
+
+.footer-section a:hover {
+    text-decoration: underline; /* Underline on hover */
+}
+
+.social-media {
+    display: flex; /* Flexbox for social media icons */
+    justify-content: center; /* Center icons */
+}
+
+.social-media a {
+    margin: 0 10px; /* Space between icons */
+}
+
+.social-media img {
+    width: 24px; /* Adjust width as needed */
+    height: 24px; /* Adjust height as needed */
+}
+
+.footer-bottom {
+    margin-top: 20px; /* Space above bottom text */
+    font-size: 0.9em; /* Smaller text */
+}
+
 
 
 @media screen and (max-width: 768px) {
