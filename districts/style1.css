@@ -58,10 +58,14 @@ nav a:hover {
     height: 500px; /* Adjust the height as needed */
 }
 
+
+
 .hero-image {
     width: 100%;
-    height: 100%; /* Make the image cover the entire hero section */
-    object-fit: cover;
+    height: 100%;
+    object-fit: cover; /* Ensures the image covers the entire section */
+    display: block; /* Ensures there's no inline spacing */
+    filter: blur(8px); /* Apply blur effect */
 }
 
 /* Dark overlay */
