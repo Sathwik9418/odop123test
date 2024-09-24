@@ -458,3 +458,22 @@ footer {
         padding: 20px;
     }
 }
+.view-more-button {
+    background-color: #333; /* Black background */
+    color: white; /* White text */
+    padding: 15px 30px; /* Increase padding for more size */
+    font-size: 1.2em; /* Increase font size */
+    border: none; 
+    margin-top: 10px; /* Space above the button */
+    cursor: pointer;
+    border-radius: 13px;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+    display: block; /* Make the button block-level */
+    width: 100%; /* Make the button full width */
+}
+
+.view-more-button:hover {
+    color: #ffffff;
+    background-color: #555; /* Darker on hover */
+    transform: scale(1.1);
+}
