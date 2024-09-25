@@ -1,10 +1,19 @@
 {
     "version": 2,
     "builds": [
-        { "src": "forum/app.js", "use": "@vercel/node" }
+        {
+            "src": "forum/app.js",
+            "use": "@vercel/node"
+        }
     ],
     "routes": [
-        { "src": "/api/posts", "dest": "/api/posts.js" },
-        { "src": "/", "dest": "forum/app.js" }
+        {
+            "src": "/api/posts",
+            "dest": "api/posts.js"
+        },
+        {
+            "src": "/(.*)",
+            "dest": "forum/app.js"
+        }
     ]
 }
