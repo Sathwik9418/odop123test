@@ -4,7 +4,7 @@
         { "src": "forum/app.js", "use": "@vercel/node" }
     ],
     "routes": [
-        { "src": "/api/posts", "dest": "api/posts.js" },
-        { "src": "/(.*)", "dest": "forum/app.js" }
+        { "src": "/api/posts", "dest": "/api/posts.js" },
+        { "src": "/", "dest": "forum/app.js" }
     ]
 }
