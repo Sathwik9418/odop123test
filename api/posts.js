@@ -1,8 +1,8 @@
 const express = require('express');
 const router = express.Router();
-const Post = require('../models/Post'); // Adjust path if necessary
+const Post = require('../models/Post');
 
-// Get all posts
+// GET posts
 router.get('/', async (req, res) => {
     try {
         const posts = await Post.find();
@@ -12,7 +12,7 @@ router.get('/', async (req, res) => {
     }
 });
 
-// Create a new post
+// POST a new post
 router.post('/', async (req, res) => {
     const post = new Post({
         title: req.body.title,
@@ -20,8 +20,8 @@ router.post('/', async (req, res) => {
     });
 
     try {
-        const savedPost = await post.save();
-        res.status(201).json(savedPost);
+        const newPost = await post.save();
+        res.status(201).json(newPost);
     } catch (error) {
         res.status(400).json({ message: error.message });
     }
