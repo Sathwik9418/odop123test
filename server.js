@@ -1,5 +1,5 @@
 // server.js
-const app = require('./forum/app');
+const app = require('./forum/app.js');
 
 const port = process.env.PORT || 3000;
 
